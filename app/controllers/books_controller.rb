@@ -24,6 +24,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    @books = Book.all
   end
   
   def update
@@ -40,6 +41,6 @@ class BooksController < ApplicationController
   
   private
   def book_params
-    params.require(:book).permit(:本のタイトル, :感想)
+    params.require(:book).permit(:title, :body)
   end
 end
